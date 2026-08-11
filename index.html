@@ -4,9 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimum Communication Agency</title>
+    <title>Optimum Communication Agency | Creative Stories, Brilliant Strategy</title>
     <meta name="description"
         content="Optimum Communication Agency - Driving Change Through Creative Stories and Brilliant Strategy.">
+    <link rel="canonical" href="https://optimumcommunications.online/">
+    <meta name="theme-color" content="#050505">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Optimum Communication Agency">
+    <meta property="og:title" content="Optimum Communication Agency | Creative Stories, Brilliant Strategy">
+    <meta property="og:description"
+        content="We help companies and institutions build brand identities that connect deeply with their audience through world-class storytelling and strategy.">
+    <meta property="og:url" content="https://optimumcommunications.online/">
+    <meta property="og:image" content="https://optimumcommunications.online/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimum Communication Agency | Creative Stories, Brilliant Strategy">
+    <meta name="twitter:description"
+        content="We help companies and institutions build brand identities that connect deeply with their audience through world-class storytelling and strategy.">
+    <meta name="twitter:image" content="https://optimumcommunications.online/images/hero-bg.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Optimum Communication Agency",
+        "url": "https://optimumcommunications.online/",
+        "description": "Optimum Communication Agency - Driving Change Through Creative Stories and Brilliant Strategy.",
+        "sameAs": []
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +49,30 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Preload critical hero image (LCP) -->
+    <link rel="preload" as="image" href="images/hero-bg.jpg" fetchpriority="high">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Apply saved/preferred theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-outline" aria-hidden="true"></div>
 
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 OPTIMUM<span>.</span>
             </a>
 
@@ -39,8 +86,9 @@
             </nav>
 
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️ / 🌙</button>
-                <button class="menu-btn" aria-label="Toggle Menu">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to light theme"
+                    aria-pressed="false">☀️ / 🌙</button>
+                <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="menu-btn-line"></span>
                     <span class="menu-btn-line"></span>
                 </button>
@@ -48,7 +96,7 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu">
+        <div class="mobile-menu" id="mobile-menu">
             <ul class="mobile-nav-links">
                 <li><a href="#about" class="mobile-nav-link">About</a></li>
                 <li><a href="#services" class="mobile-nav-link">Services</a></li>
@@ -58,7 +106,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-bg-elements">
@@ -138,7 +186,11 @@
                 <div class="services-grid">
                     <div class="service-card reveal-fade">
                         <div class="service-image-wrapper">
-                            <img src="images/expertise-1.jpg" alt="Creative Branding" class="service-image">
+                            <picture>
+                                <source srcset="images/expertise-1.webp" type="image/webp">
+                                <img src="images/expertise-1.jpg" alt="Creative Branding" class="service-image"
+                                    width="820" height="641" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <h3 class="service-title">Creative Branding</h3>
                         <p class="service-description">Building brand identities that connect with audiences and stand
@@ -147,7 +199,11 @@
 
                     <div class="service-card reveal-fade">
                         <div class="service-image-wrapper">
-                            <img src="images/expertise-2.jpg" alt="Campaign Management" class="service-image">
+                            <picture>
+                                <source srcset="images/expertise-2.webp" type="image/webp">
+                                <img src="images/expertise-2.jpg" alt="Campaign Management" class="service-image"
+                                    width="900" height="600" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <h3 class="service-title">Campaign Management</h3>
                         <p class="service-description">Executing high-impact campaigns across digital and traditional
@@ -156,7 +212,11 @@
 
                     <div class="service-card reveal-fade">
                         <div class="service-image-wrapper">
-                            <img src="images/expertise-3.jpg" alt="Social Media Strategy" class="service-image">
+                            <picture>
+                                <source srcset="images/expertise-3.webp" type="image/webp">
+                                <img src="images/expertise-3.jpg" alt="Social Media Strategy" class="service-image"
+                                    width="900" height="613" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <h3 class="service-title">Social Media Strategy</h3>
                         <p class="service-description">Engaging your community with insightful strategies and compelling
@@ -165,7 +225,11 @@
 
                     <div class="service-card reveal-fade">
                         <div class="service-image-wrapper">
-                            <img src="images/expertise-4.jpg" alt="Audio-Visual Production" class="service-image">
+                            <picture>
+                                <source srcset="images/expertise-4.webp" type="image/webp">
+                                <img src="images/expertise-4.jpg" alt="Audio-Visual Production" class="service-image"
+                                    width="900" height="600" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <h3 class="service-title">Audio-Visual Production</h3>
                         <p class="service-description">World-class storytelling through high-quality video and audio
@@ -184,60 +248,80 @@
                 </div>
 
                 <div class="projects-grid">
-                    <a href="#" class="project-card reveal-fade">
+                    <div class="project-card reveal-fade">
                         <div class="project-image-wrapper">
-                            <img src="images/ngozi-naturals.jpg" alt="NGOZI NATURALS Products" class="project-image">
+                            <picture>
+                                <source srcset="images/ngozi-naturals.webp" type="image/webp">
+                                <img src="images/ngozi-naturals.jpg" alt="NGOZI NATURALS Products" class="project-image"
+                                    width="1200" height="675" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">NGOZI NATURALS</h3>
                             <p class="project-category">Skin Therapy & Natural Products</p>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#" class="project-card reveal-fade">
+                    <div class="project-card reveal-fade">
                         <div class="project-image-wrapper">
-                            <img src="images/the-pork-house.jpg" alt="THE PORK HOUSE" class="project-image">
+                            <picture>
+                                <source srcset="images/the-pork-house.webp" type="image/webp">
+                                <img src="images/the-pork-house.jpg" alt="THE PORK HOUSE" class="project-image"
+                                    width="1200" height="800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">THE PORK HOUSE</h3>
                             <p class="project-category">Fresh Pork Retailers</p>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#" class="project-card reveal-fade">
+                    <div class="project-card reveal-fade">
                         <div class="project-image-wrapper">
-                            <img src="images/jr-farms.jpg" alt="JR FARMS" class="project-image">
+                            <picture>
+                                <source srcset="images/jr-farms.webp" type="image/webp">
+                                <img src="images/jr-farms.jpg" alt="JR FARMS" class="project-image" width="1200"
+                                    height="801" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">JR FARMS</h3>
                             <p class="project-category">Agricultural Development</p>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#" class="project-card reveal-fade">
+                    <div class="project-card reveal-fade">
                         <div class="project-image-wrapper">
-                            <img src="images/jali-group.jpg" alt="JALI GROUP" class="project-image">
+                            <picture>
+                                <source srcset="images/jali-group.webp" type="image/webp">
+                                <img src="images/jali-group.jpg" alt="JALI GROUP" class="project-image" width="1200"
+                                    height="800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">JALI GROUP</h3>
                             <p class="project-category">IFF 2025 Partnership</p>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="#" class="project-card reveal-fade">
+                    <div class="project-card reveal-fade">
                         <div class="project-image-wrapper">
-                            <img src="images/icyambu-concert.jpg" alt="ICYAMBU CONCERT 2024" class="project-image">
+                            <picture>
+                                <source srcset="images/icyambu-concert.webp" type="image/webp">
+                                <img src="images/icyambu-concert.jpg" alt="ICYAMBU CONCERT 2024" class="project-image"
+                                    width="1200" height="1800" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">ICYAMBU CONCERT</h3>
                             <p class="project-category">ICYAMBU CONCERT 2024</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="projects-cta reveal-fade" style="text-align: center; margin-top: 4rem;">
-                    <a href="#" class="btn btn-secondary">
-                        <span class="btn-text">Discover More Projects</span>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span class="btn-text">Discuss Your Next Project</span>
                     </a>
                 </div>
             </div>
@@ -251,21 +335,29 @@
                     <p class="contact-text">Ready to cut through the noise? Let's discuss your next big idea.</p>
                 </div>
                 <div class="contact-form-wrapper reveal-fade">
-                    <form class="contact-form">
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/b.zigalarissa@gmail.com"
+                        method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name"
+                                autocomplete="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                            <label for="email" class="sr-only">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email"
+                                autocomplete="email" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" class="form-control" rows="4" placeholder="Your Message"
-                                required></textarea>
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="4"
+                                placeholder="Your Message" required></textarea>
                         </div>
+                        <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off">
                         <button type="submit" class="btn btn-primary btn-submit">
                             <span class="btn-text">Send Message</span>
                             <span class="btn-icon">➔</span>
                         </button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -277,7 +369,7 @@
         <div class="container footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="#" class="logo">OPTIMUM<span>.</span></a>
+                    <a href="#home" class="logo">OPTIMUM<span>.</span></a>
                     <p class="footer-tagline">Driving Change Through Creative Stories.</p>
                 </div>
                 <div class="footer-links-group">
@@ -286,19 +378,13 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#projects">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-group">
-                    <h4 class="footer-heading">Socials</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">© 2026 Optimum Communication Agency. All rights reserved.</p>
+                <p class="copyright">© <span id="copyright-year">2026</span> Optimum Communication Agency. All rights
+                    reserved.</p>
                 <p class="love-text">We love our customers!</p>
             </div>
         </div>
