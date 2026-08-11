@@ -1,52 +1,66 @@
-Optimum Ltd Website
+# Optimum Communication Agency — Website
 
- Overview
+## Overview
 
-This project is a modern and responsive website developed for **Optimum Ltd**, a company providing outsourced IT services. The website showcases the company’s services, company profile, and contact information in a clean and user-friendly interface.
+A modern, responsive marketing website for **Optimum Communication Agency**, a
+communications and branding agency. The site presents the agency's services,
+featured projects, and a way for prospective clients to get in touch.
 
-Purpose
+## Features
 
-The goal of this project is to:
+- Responsive layout (mobile, tablet, desktop)
+- Light/dark theme toggle, with the visitor's OS preference respected by default
+- Scroll-triggered reveal animations
+- Services and project showcase sections
+- Contact form (delivered via [Formspree](https://formspree.io))
+- SEO essentials: Open Graph/Twitter meta tags, JSON-LD structured data, sitemap, robots.txt
 
-* Present Optimum Ltd’s services professionally
-* Improve online visibility
-* Provide clients with easy access to company information
-* Create a strong digital brand presence
+## Technologies Used
 
-Features
+- HTML5
+- CSS3 (custom properties, no framework)
+- Vanilla JavaScript (no build step required)
 
-* Responsive design (works on mobile, tablet, and desktop)
-* Clean and modern UI/UX
-* About Us section
-* Services section
-* Contact section
-* Navigation bar for easy browsing
-
-🛠️ Technologies Used
-
-* HTML5
-* CSS3
-* JavaScript
-
-📂 Project Structure
+## Project Structure
 
 ```
-Optimum-Web/
-│── index.html
-│── css/
-│── js/
-│── images/
+Optimum-Portofolio-Web/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── main.js
+├── images/            # optimized .jpg + .webp pairs
+├── favicon.svg / apple-touch-icon.png / icon-192.png / icon-512.png
+├── site.webmanifest
+├── robots.txt
+└── sitemap.xml
 ```
-Contributions are welcome! Feel free to fork this repository and submit a pull request.
 
-Contact
+## Running Locally
 
-For inquiries or collaboration:
+This is a static site with no build step. Serve the folder with any static
+file server, for example:
 
-* Email: umuringak2@gmail.com
-* Location: Kigali, Rwanda
+```
+npx serve .
+```
 
-Author
+Then open the printed local URL in your browser.
 
-Kelly UMURINGA
-Photographer | Videographer | Software Developer
+## Updating Images
+
+Source photos should be resized/compressed before committing. A rough guide:
+hero background ≈ 2400px wide, service/project photos ≈ 900–1200px wide,
+JPEG quality ~75-80, with a matching `.webp` generated alongside each `.jpg`.
+
+## Contact Form
+
+The form posts to a Formspree endpoint configured in `index.html`
+(`<form action="...">`). To change where submissions are delivered, update
+that endpoint in your Formspree dashboard or swap in a different form
+backend (e.g. Netlify Forms).
+
+## Contact
+
+For inquiries or collaboration, use the contact form on the live site.
